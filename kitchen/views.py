@@ -30,7 +30,7 @@ def index(request):
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     template_name = "kitchen/dish_type_list.html"
-    paginate_by = 5
+    paginate_by = 10
     context_object_name = "dish_type_list"
 
     def get_queryset(self, *args, **kwargs):
@@ -50,6 +50,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
         context["search_form"] = DishTypeSearchForm(
             initial={"name": name}
         )
+        context["page_name"] = "dish-types-list"
         return context
 
 
@@ -75,7 +76,7 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
-    paginate_by = 5
+    paginate_by = 10
 
     def get_queryset(self, *args, **kwargs):
         username = self.request.GET.get("username", "")
@@ -94,6 +95,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
         context["search_form"] = CookSearchForm(
             initial={"username": username}
         )
+        context["page_name"] = "cooks-list"
         return context
 
 
@@ -121,7 +123,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
-    paginate_by = 5
+    paginate_by = 10
 
     def get_queryset(self, *args, **kwargs):
         name = self.request.GET.get("name")
@@ -138,6 +140,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
         name = self.request.GET.get("name", "")
 
         context["search_form"] = DishSearchForm(initial={"name": name})
+        context["page_name"] = "dish-list"
         return context
 
 
