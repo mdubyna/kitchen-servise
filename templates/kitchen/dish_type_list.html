@@ -1,0 +1,65 @@
+{% extends 'layouts/base_background.html' %}
+{% load static %}
+
+{% block body %} class="index-page bg-gray-200" {% endblock body %}
+
+
+{% block content %}
+
+  <header class="header-2">
+    <div class="page-header min-vh-75 relative" style="background-image: url('{% static 'img/dishes.jpg' %}')">
+      <span class="mask bg-gradient-secondary opacity-4"></span>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 text-center mx-auto">
+            <h1 class="text-white pt-3 mt-n5">Dish types</h1>
+            <p class="lead text-white mt-3">All dish types that are prepared in the restaurant</p>
+            <a href="{% url 'kitchen:dish-type-create' %}" class="btn btn-dark link-to-page">
+              Create
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+
+    {% if dish_type_list %}
+
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+
+        {% for type in dish_type_list %}
+          <tr>
+            <td>
+              {{ type.id }}
+            </td>
+            <td>
+              {{ type.name }}
+            </td>
+            <td>
+              <a href="{% url 'kitchen:dish-type-update' pk=type.id %}">
+                Update
+              </a>
+            </td>
+            <td>
+              <a style="color: red"
+                 href="{% url 'kitchen:dish-type-delete' pk=type.id %}">
+                Delete
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+
+    {% else %}
+      <p>There are no dish types in the service.</p>
+    {% endif %}
+  </div>
+{% endblock content %}
