@@ -5,7 +5,7 @@
 
 {% block content %}
   <header class="header-2">
-    <div class="page-header min-vh-75 relative" style="background-image: url('{% static 'img/dishes.jpg' %}')">
+    <div class="page-header min-vh-55 relative" style="background-image: url('{% static 'img/dishes.jpg' %}')">
       <span class="mask bg-gradient-secondary opacity-4"></span>
       <div class="container">
         <div class="row">
@@ -22,6 +22,7 @@
   </header>
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+  {% include "includes/search.html" %}
   
   {% if cook_list %}
     <table class="table">
