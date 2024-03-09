@@ -25,13 +25,6 @@
           </li>
         </ul>
         <ul class="navbar-nav flex-grow-0">
-          <li class="nav-item">
-            {% with allowed_pages="dish-types-list,dish-list,cooks-list" %}
-              {% if page_name in allowed_pages %}
-                {% include "includes/search.html" %}
-              {% endif %}
-            {% endwith %}
-          </li>
           {% if request.user.is_authenticated %}
             <li class="nav-item">
               <form id="logout-form" action="{% url "logout" %}?next={{ request.path }}" method="POST">
