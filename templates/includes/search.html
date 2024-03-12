@@ -1,0 +1,8 @@
+<form class="d-flex" method="GET" action="">
+  {% load crispy_forms_filters %}
+    {% csrf_token %}
+        {{ search_form|crispy }}
+    <button class="btn btn-outline-dark border-0" type="submit">
+        <i class="bi bi-search text-black"></i>
+    </button>
+</form>

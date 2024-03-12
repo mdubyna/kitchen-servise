@@ -1,0 +1,45 @@
+<!-- -------- START HEADER 1 w/ text and image on right ------- -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-absolute bg-transparent shadow-none">
+    <div class="container">
+      <a class="navbar-brand text-white" href="{% url 'kitchen:index' %}">Kitchen service</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header-2" aria-controls="navbar-header-2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-header-2">
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'kitchen:dish-type-list' %}">
+              Dish types
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'kitchen:dish-list' %}">
+              Dishes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'kitchen:cook-list' %}">
+              Cooks
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav flex-grow-0">
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <form id="logout-form" action="{% url "logout" %}?next={{ request.path }}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Logout" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'kitchen:cook-detail' pk=user.pk %}">
+                {{ user.username }}
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

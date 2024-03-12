@@ -1,0 +1,39 @@
+{% extends 'layouts/base_background.html' %}
+{% load static %}
+
+{% block body %} class="index-page bg-gray-200" {% endblock body %}
+
+{% block content %}
+  <header class="header-2">
+    <div class="page-header min-vh-55 relative" style="background-image: url('{% static 'img/dishes.jpg' %}')">
+      <span class="mask bg-gradient-secondary opacity-4"></span>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 text-center mx-auto">
+            <h1 class="text-white pt-3 mt-n5">Dishes</h1>
+            <p class="lead text-white mt-3">All dishes that are prepared in the restaurant</p>
+            <a href="{% url 'kitchen:dish-create' %}" class="btn btn-dark link-to-page">
+              Create
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+  {% include "includes/search.html" %}
+    {% if dish_list %}
+      <ul>
+      {% for dish in dish_list %}
+        <li>
+          {{ forloop.counter }}: <a href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.name }}</a>
+          ({{ dish.dish_type.name }})
+        </li>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>There are no dishes in menu</p>
+      {% endif %}
+  </div>
+{% endblock content %}
