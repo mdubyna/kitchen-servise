@@ -20,6 +20,7 @@ from django.urls import path, include
 
 from kitchen_service import settings
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("kitchen.urls", namespace="kitchen")),

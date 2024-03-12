@@ -1,9 +1,8 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from django.core.exceptions import ValidationError
 
-from kitchen.models import DishType, Cook, Dish
+from kitchen.models import Cook, Dish
 
 
 class DishTypeSearchForm(forms.Form):
