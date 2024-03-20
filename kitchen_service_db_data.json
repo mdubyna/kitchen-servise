@@ -1,0 +1,204 @@
+[
+  {
+    "model": "kitchen.dishType",
+    "pk": 1,
+    "fields": {
+      "name": "Pizza"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 2,
+    "fields": {
+      "name": "Pasta"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 3,
+    "fields": {
+      "name": "Salad"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 4,
+    "fields": {
+      "name": "Burger"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 5,
+    "fields": {
+      "name": "Sushi"
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Pepperoni",
+      "description": "A classic favorite topped with zesty pepperoni slices and gooey mozzarella cheese on a crispy crust.",
+      "price": "20.25",
+      "dish_type": 1,
+      "cooks": [1]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 2,
+    "fields": {
+      "name": "Margherita",
+      "description": "Simple yet delicious pizza with tomato sauce, mozzarella, and basil.",
+      "price": "18.50",
+      "dish_type": 1,
+      "cooks": [1]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 3,
+    "fields": {
+      "name": "Alfredo",
+      "description": "Creamy pasta dish with parmesan cheese and garlic.",
+      "price": "15.75",
+      "dish_type": 2,
+      "cooks": [1, 2]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 4,
+    "fields": {
+      "name": "Caesar Salad",
+      "description": "Classic salad with romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
+      "price": "12.99",
+      "dish_type": 3,
+      "cooks": [1, 3]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 5,
+    "fields": {
+      "name": "Cheeseburger",
+      "description": "Juicy beef patty topped with melted cheese, lettuce, tomato, and onion on a toasted bun.",
+      "price": "14.50",
+      "dish_type": 4,
+      "cooks": [1, 4]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 6,
+    "fields": {
+      "name": "California Roll",
+      "description": "Sushi roll filled with crab, avocado, and cucumber, wrapped in seaweed and rice.",
+      "price": "16.99",
+      "dish_type": 5,
+      "cooks": [1, 5]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 7,
+    "fields": {
+      "name": "Margarita Pasta",
+      "description": "Pasta with tomatoes, fresh basil, and garlic sautéed in olive oil.",
+      "price": "17.25",
+      "dish_type": 2,
+      "cooks": [1, 2]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 8,
+    "fields": {
+      "name": "Greek Salad",
+      "description": "Salad with lettuce, tomatoes, cucumbers, olives, feta cheese, and Greek dressing.",
+      "price": "11.99",
+      "dish_type": 3,
+      "cooks": [1, 3]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 9,
+    "fields": {
+      "name": "BBQ Burger",
+      "description": "Beef burger with barbecue sauce, cheddar cheese, bacon, lettuce, and onion rings.",
+      "price": "16.75",
+      "dish_type": 4,
+      "cooks": [1, 4]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 10,
+    "fields": {
+      "name": "Dragon Roll",
+      "description": "Sushi roll filled with shrimp tempura, avocado, and spicy mayo, topped with eel.",
+      "price": "19.99",
+      "dish_type": 5,
+      "cooks": [1, 5]
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 1,
+    "fields": {
+      "username": "ivan_cook",
+      "years_of_cooking": 4,
+      "first_name": "Ivan",
+      "last_name": "Smith",
+      "is_superuser": true,
+      "is_staff": true,
+      "password": "pbkdf2_sha256$720000$BolYCP3ueXUoqtDZ66ROpy$Rz5aP47/DHYta8H8RnmCnSoE4Q1n/ax92omhd1BCk/k="
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 2,
+    "fields": {
+      "username": "pasta_chef",
+      "years_of_cooking": 5,
+      "first_name": "Maria",
+      "last_name": "Gonzalez",
+      "password": "pbkdf2_sha256$720000$BolYCP3ueXUoqtDZ66ROpy$Rz5aP47/DHYta8H8RnmCnSoE4Q1n/ax92omhd1BCk/k="
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 3,
+    "fields": {
+      "username": "salad_chef",
+      "years_of_cooking": 6,
+      "first_name": "Sophia",
+      "last_name": "Lee",
+      "password": "pbkdf2_sha256$720000$BolYCP3ueXUoqtDZ66ROpy$Rz5aP47/DHYta8H8RnmCnSoE4Q1n/ax92omhd1BCk/k="
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 4,
+    "fields": {
+      "username": "burger_chef",
+      "years_of_cooking": 7,
+      "first_name": "Michael",
+      "last_name": "Johnson",
+      "password": "pbkdf2_sha256$720000$BolYCP3ueXUoqtDZ66ROpy$Rz5aP47/DHYta8H8RnmCnSoE4Q1n/ax92omhd1BCk/k="
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 5,
+    "fields": {
+      "username": "sushi_chef",
+      "years_of_cooking": 8,
+      "first_name": "Daniel",
+      "last_name": "Martinez",
+      "password": "pbkdf2_sha256$720000$BolYCP3ueXUoqtDZ66ROpy$Rz5aP47/DHYta8H8RnmCnSoE4Q1n/ax92omhd1BCk/k="
+    }
+  }
+]
