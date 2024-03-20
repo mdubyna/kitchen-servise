@@ -36,7 +36,7 @@ def index(request):
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     template_name = "kitchen/dish_type_list.html"
-    paginate_by = 10
+    paginate_by = 5
     context_object_name = "dish_type_list"
 
     def get_queryset(self, *args, **kwargs):
@@ -82,7 +82,7 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self, *args, **kwargs):
         username = self.request.GET.get("username", "")
@@ -129,11 +129,11 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self, *args, **kwargs):
         name = self.request.GET.get("name")
-        queryset = Dish.objects.select_related("dish_type")
+        queryset = Dish.objects.select_related("dish_type").prefetch_related("cooks")
 
         if name:
             return queryset.filter(name__icontains=name)
